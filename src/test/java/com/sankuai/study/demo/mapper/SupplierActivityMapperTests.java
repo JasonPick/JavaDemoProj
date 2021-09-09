@@ -1,4 +1,4 @@
-package com.sankuai.study.demo;
+package com.sankuai.study.demo.mapper;
 
 
 import com.sankuai.study.demo.entities.SupplierActivity;

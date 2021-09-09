@@ -7,3 +7,4 @@ spring:
 
 mybatis:
   type-aliases-package: com.sankuai.study.demo.entities
+  #mapper-locations: com.sankuai.study.demo.mapper

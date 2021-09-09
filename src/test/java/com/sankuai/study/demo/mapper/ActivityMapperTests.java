@@ -1,4 +1,4 @@
-package com.sankuai.study.demo;
+package com.sankuai.study.demo.mapper;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

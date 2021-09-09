@@ -1,5 +1,6 @@
 package com.sankuai.study.demo.entities;
 
+
 import lombok.Data;
 
 import java.util.Date;

@@ -2,10 +2,11 @@ package com.sankuai.study.demo.mapper;
 
 import com.sankuai.study.demo.entities.SupplierActivity;
 import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-
+@Mapper
 public interface SupplierActivityMapper {
 
     @Results(id = "BaseResultMap",value = {
@@ -21,10 +22,10 @@ public interface SupplierActivityMapper {
     List<SupplierActivity> selectById(Long id);
 
     @Update("UPDATE supplier_activity SET sign_up_status = #{newStatus} WHERE supplier_id = #{supplierId} and activity_id = #{activityId} and sign_up_status = #{oldStatus} ")
-    void updateSignUpStatus(@Param("supplierId")Long supplierId, @Param("activityId")Long activityId, Integer oldStatus, Integer newStatus);
+    int updateSignUpStatus(@Param("supplierId")Long supplierId, @Param("activityId")Long activityId, Integer oldStatus, Integer newStatus);
 
     @Insert("INSERT INTO supplier_activity(id,activity_id,activity_name,supplier_id,supplier_name) VALUES(#{id},#{activityId},#{activityName},#{supplierId},#{supplierName})")
-    void insertSupplierActivityInfo(@Param("id") Long id, @Param("activityId")Long activityId, @Param("activityName")String activityName, @Param("supplierId")Long supplierId, @Param("supplierName")String supplierName);
+    int insertSupplierActivityInfo(@Param("id") Long id, @Param("activityId")Long activityId, @Param("activityName")String activityName, @Param("supplierId")Long supplierId, @Param("supplierName")String supplierName);
 
     @Delete("DELETE FROM supplier_activity WHERE id = #{id}")
     int deleteById(@Param("id") Long id);
