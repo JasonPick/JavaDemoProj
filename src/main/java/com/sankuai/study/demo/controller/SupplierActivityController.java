@@ -1,10 +1,13 @@
 package com.sankuai.study.demo.controller;
 
 import com.sankuai.study.demo.common.ResultVO;
+import com.sankuai.study.demo.entities.SupplierActivity;
 import com.sankuai.study.demo.service.SupplierActivityQueryService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/demo")
@@ -29,9 +32,14 @@ public class SupplierActivityController {
         return ResultVO.success(username + password);
     }
 
-    @RequestMapping(value = "/get/{id}")
+    @GetMapping(value = "/get/{id}")
     public ResultVO getSupplierActivities(@PathVariable("id") Long id) {
         return ResultVO.success(supplierActivityQueryService.selectById(id));
+    }
+
+    @RequestMapping(value = "/fuzzGet/{supplierName}")
+    public ResultVO fuzzGetSupplierActivities(@PathVariable("supplierName") String supplierName) {
+        return ResultVO.success(supplierActivityQueryService.fuzzSelectBySupplierName(supplierName));
     }
 
     @RequestMapping(value = "/update")
@@ -45,14 +53,19 @@ public class SupplierActivityController {
     }
 
     @RequestMapping(value = "/delete")
-    public ResultVO deleteById(@RequestParam(value = "id")Long id){
+    public ResultVO deleteById(@RequestParam("id")Long id){
         return ResultVO.success(supplierActivityQueryService.deleteById(id));
     }
 
+    @PostMapping("/postList")
+    public ResultVO postList(@RequestBody List<SupplierActivity> supplierActivityList){
+        return ResultVO.success(supplierActivityQueryService.batchInsert(supplierActivityList));
+    }
 
-
-
-
+//    @GetMapping("/getList")
+//    public ResultVO getList(@RequestParam("name") List<String> name){
+//        return ResultVO.success(name);
+//    }
 
 
 }

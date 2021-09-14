@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.sankuai.study</groupId>
-    <artifactId>java_springboot_demo</artifactId>
+    <artifactId>jav,a_springboot_demo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>com.sankuai.study.java_springboot_demo</name>
     <description>Demo project for Spring Boot</description>
@@ -69,6 +69,14 @@
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>
             <version>1.1.14</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
         </dependency>
     </dependencies>
 

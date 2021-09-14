@@ -9,9 +9,13 @@ public interface SupplierActivityQueryService {
 
     List<SupplierActivity> selectById(Long id);
 
+    List<SupplierActivity> fuzzSelectBySupplierName(String supplierName);
+
     int updateSignUpStatus(Long supplierId, Long activityId, Integer oldStatus, Integer newStatus);
 
     int insertSupplierActivityInfo(Long id, Long activityId, String activityName, Long supplierId, String supplierName);
+
+    int batchInsert(List<SupplierActivity> supplierActivityList);
 
     int deleteById(Long id);
 }

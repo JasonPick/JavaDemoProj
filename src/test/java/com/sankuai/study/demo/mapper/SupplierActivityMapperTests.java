@@ -21,6 +21,11 @@ class SupplierActivityMapperTests {
         List<SupplierActivity> supplierActivities = supplierActivityMapper.selectById(139L);
         System.out.println(supplierActivities);
     }
+    @Test
+    void testFuzzGetSupplierActivities(){
+        List<SupplierActivity> supplierActivities = supplierActivityMapper.fuzzSelectBySupplierName("科技");
+        System.out.println(supplierActivities);
+    }
 
     @Test
     void testUpdateSignUpStatus(){
