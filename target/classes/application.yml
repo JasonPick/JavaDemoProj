@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    username: sams_test
+    password: dL7UMvkHqzQxrN
+    url: jdbc:mysql://10.189.187.131:5002/mall_sams?characterEncoding=UTF8&socketTimeout=60000&allowMultiQueries=true
+    druid:
+      stat-view-servlet:
+          enabled: true
+      filters: stat,wall
+
+
+mybatis:
+  type-aliases-package: com.sankuai.study.demo.entities
+  #mapper-locations: com.sankuai.study.demo.mapper
