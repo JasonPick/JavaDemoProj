@@ -8,7 +8,7 @@ spring:
           enabled: true
       filters: stat,wall
   kafka:
-    bootstrap-servers: 192.168.133.130:9092
+    bootstrap-servers: 127.0.0.1:9092
     producer:
       retries: 0
       batch-size: 16384
